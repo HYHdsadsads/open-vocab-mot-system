@@ -1,0 +1,24 @@
+{
+  "MOT17": {
+    "baseline": {
+      "test/MOT17-01-DPM": {
+        "mota": -Infinity,
+        "idf1": 0.0
+      },
+      "average": {
+        "mota": -Infinity,
+        "idf1": 0.0
+      }
+    },
+    "our_model": {
+      "test/MOT17-01-DPM": {
+        "mota": -Infinity,
+        "idf1": 0.0
+      },
+      "average": {
+        "mota": -Infinity,
+        "idf1": 0.0
+      }
+    }
+  }
+}

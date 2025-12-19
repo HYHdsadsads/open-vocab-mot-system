@@ -1,0 +1,17 @@
+{
+    "nodes": ["person", "car", "bicycle", "motorcycle", "bus", "human", "vehicle"],
+    "edges": [
+        [5, 0],
+        [6, 1],
+        [6, 2],
+        [6, 3],
+        [6, 4]
+    ],
+    "relations": {
+        "0": "is_a",
+        "1": "is_a",
+        "2": "is_a",
+        "3": "is_a",
+        "4": "is_a"
+    }
+}
