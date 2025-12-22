@@ -28,7 +28,6 @@ env/
 # PyTorch
 *.pth
 *.pt
-!yolov8x-worldv2.pt
 
 # Jupyter Notebook
 .ipynb_checkpoints

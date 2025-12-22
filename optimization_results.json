@@ -1,0 +1,160 @@
+{
+  "fusion_analysis": {
+    "conv_bn_relu_fusion": {
+      "fusion_opportunities": [
+        {
+          "pattern": "Conv+BN+ReLU",
+          "layers": [
+            "conv1",
+            "bn1",
+            "relu1"
+          ],
+          "conv_params": 1792,
+          "bn_params": 128,
+          "can_fuse": true
+        },
+        {
+          "pattern": "Conv+BN+ReLU",
+          "layers": [
+            "conv2",
+            "bn2",
+            "relu2"
+          ],
+          "conv_params": 73856,
+          "bn_params": 256,
+          "can_fuse": true
+        }
+      ],
+      "total_fusions": 2,
+      "memory_saved_mb": 0.00146484375,
+      "fusion_stats": {
+        "Conv+BN+ReLU": 2
+      }
+    },
+    "linear_fusion": {
+      "fusion_opportunities": [
+        {
+          "pattern": "Linear+ReLU",
+          "layers": [
+            "fc1",
+            "relu3"
+          ],
+          "can_fuse": true
+        }
+      ],
+      "total_fusions": 1,
+      "fusion_stats": {
+        "Conv+BN+ReLU": 2,
+        "Linear+ReLU": 1
+      }
+    },
+    "total_fusion_opportunities": 3,
+    "estimated_speedup": 1.15,
+    "memory_saved_mb": 0.00146484375
+  },
+  "quantization_comparison": {
+    "fp32": {
+      "precision": "FP32",
+      "avg_latency_ms": 40.516180992126465,
+      "std_latency_ms": 5.320279420827157,
+      "min_latency_ms": 36.89908981323242,
+      "max_latency_ms": 72.71361351013184,
+      "model_size_mb": 0.42581939697265625
+    },
+    "int8": {
+      "precision": "INT8",
+      "avg_latency_ms": 38.6614727973938,
+      "std_latency_ms": 1.2564022897970726,
+      "min_latency_ms": 35.90536117553711,
+      "max_latency_ms": 41.88871383666992,
+      "model_size_mb": 0.072509765625,
+      "speedup": 1.0479730351829146
+    }
+  },
+  "profiling": {
+    "layer_stats": {
+      "conv1": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "bn1": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "relu1": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "conv2": {
+        "avg_time_ms": 0.019989013671875,
+        "std_time_ms": 0.139923095703125,
+        "percentage": 100.0
+      },
+      "bn2": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "relu2": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "pool": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "fc1": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "relu3": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      },
+      "fc2": {
+        "avg_time_ms": 0.0,
+        "std_time_ms": 0.0,
+        "percentage": 0.0
+      }
+    },
+    "total_time_ms": 0.019989013671875,
+    "num_layers": 10
+  },
+  "breakdown_chart": {
+    "labels": [
+      "Convolution",
+      "BatchNorm",
+      "Activation",
+      "Pooling",
+      "Linear"
+    ],
+    "values": [
+      0.019989013671875,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "percentages": [
+      100.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "recommendations": [
+    "✅ 建议使用 TensorRT 进行算子融合，可融合 3 个算子组合",
+    "   预计加速: 1.15x",
+    "⚠️ 瓶颈在 Convolution 层（占 100.0%），建议优先优化",
+    "   建议: 使用深度可分离卷积或 MobileNet 架构",
+    "💡 建议使用批处理推理（batch_size=4-8）以提升 GPU 利用率"
+  ]
+}
