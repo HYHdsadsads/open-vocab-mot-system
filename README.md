@@ -143,11 +143,23 @@ python experiments/run_optimization_experiments.py
 
 ## 文档
 
+### 快速开始
 - [快速开始指南](QUICKSTART.md)
 - [详细文档](OPTIMIZATION_README.md)
 - [优化改进说明](OPTIMIZATION_IMPROVEMENTS.md)
 - [实现总结](IMPLEMENTATION_SUMMARY.md)
 - [开题答辩大纲](研究生开题答辩大纲.md)
+
+### 数据集评测指标
+- [MOT17数据集指标详解](MOT17_METRICS_GUIDE.md) - 标准行人跟踪基准
+- [MOT17实验结果表格](MOT17_RESULTS_TABLE.md) - 论文用表格
+- [MOT20数据集指标详解](MOT20_METRICS_GUIDE.md) - 高密度场景基准
+- [MOT20实验结果表格](MOT20_RESULTS_TABLE.md) - 论文用表格
+- [BDD100K数据集指标详解](BDD100K_METRICS_GUIDE.md) - 自动驾驶场景基准
+- [BDD100K实验结果表格](BDD100K_RESULTS_TABLE.md) - 论文用表格
+- [TAO/LVIS数据集指标详解](TAO_LVIS_METRICS_GUIDE.md) - 开放词汇跟踪基准
+- [TAO/LVIS实验结果表格](TAO_LVIS_RESULTS_TABLE.md) - 论文用表格
+- [多数据集综合对比](ALL_DATASETS_COMPARISON.md) - 跨数据集分析
 
 ## 使用示例
 
