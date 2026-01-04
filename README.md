@@ -148,7 +148,10 @@ python experiments/run_optimization_experiments.py
 - [详细文档](OPTIMIZATION_README.md)
 - [优化改进说明](OPTIMIZATION_IMPROVEMENTS.md)
 - [实现总结](IMPLEMENTATION_SUMMARY.md)
+
+### 开题报告
 - [开题答辩大纲](研究生开题答辩大纲.md)
+- [技术方案详解](THESIS_PROPOSAL_TECHNICAL_PLAN.md) - 核心技术方案与评测体系
 
 ### 数据集评测指标
 - [MOT17数据集指标详解](MOT17_METRICS_GUIDE.md) - 标准行人跟踪基准
